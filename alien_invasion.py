@@ -21,6 +21,7 @@ class AlienInvasion:
         # Starting main loop for the game
         while True:
             self._check_events()
+            self.ship.update()
             self._update_screen()
 
     # Watch for keyboard and mouse events (helper method) _
@@ -31,7 +32,10 @@ class AlienInvasion:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     # Move ship to the right
-                    self.ship.rect.x += 1
+                    self.ship.moving_right = True
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_RIGHT:
+                    self.ship.moving_right = False
 
     def _update_screen(self):
         # redraw screen during each pass through the loop
