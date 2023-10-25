@@ -5,7 +5,7 @@ from settings import Settings
 
 
 class AlienInvasion:
-    # Class to mnage game assets and behavior
+    # Class to manage game assets and behavior
     def __init__(self):
         # Initialize game and create game resources
         pygame.init()
